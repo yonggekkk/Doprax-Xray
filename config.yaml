@@ -1,0 +1,73 @@
+og:
+  loglevel: info
+dns:
+  servers:
+  - https+local://8.8.8.8/dns-query
+inbounds:
+- port: 20000
+  protocol: vless
+  settings:
+    decryption: none
+    clients:
+    - id: uuid
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-vl
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic
+- port: 10000
+  protocol: vmess
+  settings:
+    clients:
+    - id: uuid
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-vm
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic
+- port: 40000
+  protocol: shadowsocks
+  settings:
+    password: "uuid"
+    method: chacha20-ietf-poly1305
+    ivcheck: true
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-ss
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic
+- port: 30000
+  protocol: trojan
+  settings:
+    clients:
+    - password: "uuid"
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-tr
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic
+outbounds:
+- protocol: freedom
+  tag: direct
+  settings:
+    domainStrategy: UseIPv4
