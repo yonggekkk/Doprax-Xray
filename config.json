@@ -1,73 +1,88 @@
-log:
-  loglevel: info
-dns:
-  servers:
-  - https+local://8.8.8.8/dns-query
-inbounds:
-- port: 20000
-  protocol: vless
-  settings:
-    decryption: none
-    clients:
-    - id: uuid
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: /uuid-vl
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
-- port: 10000
-  protocol: vmess
-  settings:
-    clients:
-    - id: uuid
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: /uuid-vm
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
-- port: 40000
-  protocol: shadowsocks
-  settings:
-    password: "uuid"
-    method: chacha20-ietf-poly1305
-    ivcheck: true
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: /uuid-ss
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
-- port: 30000
-  protocol: trojan
-  settings:
-    clients:
-    - password: "uuid"
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: /uuid-tr
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
-outbounds:
-- protocol: freedom
-  tag: direct
-  settings:
-    domainStrategy: UseIPv4
+{
+	"log": {
+		"access": "/dev/null",
+		"error": "/dev/null",
+		"loglevel": "warning"
+	},
+	"inbounds": [{
+			"port": 10000,
+			"listen": "127.0.0.1",
+			"protocol": "vmess",
+			"settings": {
+				"clients": [{
+					"id": "uuid",
+					"alterId": 0
+				}]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-vm"
+				}
+			}
+		},
+		{
+			"port": 20000,
+			"listen": "127.0.0.1",
+			"protocol": "vless",
+			"settings": {
+				"clients": [{
+					"id": "uuid"
+				}],
+				"decryption": "none"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-vl"
+				}
+			}
+		},
+		   {
+			"port": 30000,  
+			"listen": "127.0.0.1",
+			"protocol": "trojan",
+			"settings": {
+				"clients": [
+					{
+						"password": "uuid"
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-tr"
+				}
+			}
+		},
+		{
+			"port": 40000,
+			"listen": "127.0.0.1",
+			"protocol": "shadowsocks",
+			"settings": {
+				"method": "chacha20-ietf-poly1305",
+				"password": "uuid",
+				"ivcheck": true
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-ss"
+				}
+			}
+		}
+		     		     
+	],
+	"outbounds": [{
+		"protocol": "freedom",
+		"settings": {}
+	}],
+	"dns": {
+		"server": [
+			"8.8.8.8",
+			"8.8.4.4",
+			"localhost"
+		]
+	}
+}
