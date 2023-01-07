@@ -38,7 +38,7 @@ inbounds:
 - port: 40000
   protocol: shadowsocks
   settings:
-    password: uuid
+    password: "uuid"
     method: chacha20-ietf-poly1305
     ivcheck: true
   streamSettings:
@@ -55,7 +55,7 @@ inbounds:
   protocol: trojan
   settings:
     clients:
-    - password: uuid
+    - password: "uuid"
   streamSettings:
     network: ws
     wsSettings:
