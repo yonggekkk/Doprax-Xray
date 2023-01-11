@@ -1,6 +1,6 @@
 点击fork、点击绿色的use this template（Create a new repository）、自己下载上传都可以
 
-唯一注意的是一定要改项目名称
+唯一注意的是一定要随便改个项目名称
 
 接下来就看教程吧 23.1.12即将发布。
 
