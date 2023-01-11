@@ -1,5 +1,6 @@
 
 
+### 静态伪装站取自[mack-a](https://github.com/mack-a/v2ray-agent)
+### 鸣谢[hiifeng](https://github.com/hiifeng/V2ray-for-Doprax)、[fscarmen](https://github.com/fscarmen2/V2-for-Doprax)
 
-### 本项目基于[hiifeng](https://github.com/hiifeng/V2ray-for-Doprax)的项目修改而来
 
