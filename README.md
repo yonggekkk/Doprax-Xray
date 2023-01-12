@@ -1,8 +1,8 @@
+#### 唯一注意的是一定要随便改个项目名称
+
+#### 注意此节点仅做备用节点用，主力还是算了吧。。。
+
 点击fork、点击绿色的use this template（Create a new repository）、自己下载上传、甚至可以不通过github，每个文件直接上传到doprax上。。。。都可以
-
-### 唯一注意的是一定要随便改个项目名称
-
-### 注意此节点仅做备用节点用，主力还是算了吧。。。
 
 [相关文字视频教程请点击](https://ygkkk.blogspot.com/2023/01/doprax-xray-v2ray-cdn.html)
 
