@@ -79,8 +79,8 @@
 			"listen": "127.0.0.1",
 			"protocol": "shadowsocks",
 			"settings": {
-				"method": "chacha20-ietf-poly1305",
 				"password": "uuid",
+				"method": "chacha20-ietf-poly1305",
 				"ivcheck": true
 			},
 			"streamSettings": {
