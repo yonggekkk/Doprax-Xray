@@ -84,7 +84,6 @@
 				"ivcheck": true
 			},
 			"streamSettings": {
-				"security": "none",
 				"network": "ws",
 				"dsSettings": {
 					"path": "/uuid-ss"
