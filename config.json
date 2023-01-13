@@ -1,0 +1,112 @@
+{
+	"log": {
+		"access": "/dev/null",
+		"error": "/dev/null",
+		"loglevel": "warning"
+	},
+	"inbounds": [
+		{
+			"port": 10000,
+			"listen": "127.0.0.1",
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "uuid",
+						"alterId": 0
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-vm"
+				},
+			"sniffing": {
+         "enabled": true,
+         "destOverride": ["http", "tls", "quic"]
+                                }
+			}
+		},
+		{
+			"port": 20000,
+			"listen": "127.0.0.1",
+			"protocol": "vless",
+			"settings": {
+				"clients": [
+					{
+						"id": "uuid"
+					}
+				],
+				"decryption": "none"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-vl"
+				},
+			"sniffing": {
+         "enabled": true,
+         "destOverride": ["http", "tls", "quic"]
+                                }
+			}
+		},
+		{
+			"port": 30000,
+			"listen": "127.0.0.1",
+			"protocol": "trojan",
+			"settings": {
+				"clients": [
+					{
+						"password": "uuid"
+					}
+				],
+				"decryption": "none"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uuid-tr"
+				},
+			"sniffing": {
+         "enabled": true,
+         "destOverride": ["http", "tls", "quic"]
+                                }
+			}
+		},
+		{
+			"port": 40000,
+			"listen": "127.0.0.1",
+			"protocol": "shadowsocks",
+			"settings": {
+				"method": "chacha20-ietf-poly1305",
+				"password": "uuid",
+				"ivcheck": true
+			},
+			"streamSettings": {
+				"security": "none",
+				"network": "ws",
+				"dsSettings": {
+					"path": "/uuid-ss"
+				},
+			"sniffing": {
+         "enabled": true,
+         "destOverride": ["http", "tls", "quic"]
+                                }
+			}
+		}	
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		}
+	],
+	"dns": {
+		"server": [
+			"8.8.8.8",
+			"8.8.4.4",
+			"localhost"
+		]
+	}
+}
