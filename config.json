@@ -23,8 +23,8 @@
 					"path": "/uuid-vm"
 				},
 			"sniffing": {
-         "enabled": true,
-         "destOverride": ["http", "tls", "quic"]
+                                "enabled": true,
+                                "destOverride": ["http", "tls", "quic"]
                                 }
 			}
 		},
@@ -46,8 +46,8 @@
 					"path": "/uuid-vl"
 				},
 			"sniffing": {
-         "enabled": true,
-         "destOverride": ["http", "tls", "quic"]
+                                "enabled": true,
+                                "destOverride": ["http", "tls", "quic"]
                                 }
 			}
 		},
@@ -69,8 +69,8 @@
 					"path": "/uuid-tr"
 				},
 			"sniffing": {
-         "enabled": true,
-         "destOverride": ["http", "tls", "quic"]
+                                "enabled": true,
+                                "destOverride": ["http", "tls", "quic"]
                                 }
 			}
 		},
@@ -90,11 +90,12 @@
 					"path": "/uuid-ss"
 				},
 			"sniffing": {
-         "enabled": true,
-         "destOverride": ["http", "tls", "quic"]
+                                "enabled": true,
+                                "destOverride": ["http", "tls", "quic"]
                                 }
 			}
-		}	
+		}
+	
 	],
 	"outbounds": [
 		{
