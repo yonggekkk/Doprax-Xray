@@ -8,7 +8,7 @@
 
 #### 唯一注意的是一定要随便改个项目名称
 
-#### 你可以点击fork、可以点击绿色的use this template（Create a new repository）、可以自己下载上传、甚至可以不通过github，下载文件直接上传到doprax上
+#### 你可以点击fork、也可以不通过github，下载文件直接上传到doprax上
 
 #### 必填uuid变量名：uuid
 
