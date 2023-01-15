@@ -1,12 +1,12 @@
-## Doprax四合一协议共存
+### Doprax四合一协议共存
 
-## Xray内核，支持vless，vmess，trojan，shadowsocks四个配置同时在线！支持自定义伪装网站
+### Xray内核，支持vless，vmess，trojan，shadowsocks四个配置同时在线！支持自定义伪装网站
 
--------------------------------------------------------------
+------------------------
 
 #### 唯一注意的是一定要随便改个项目名称
 
-#### 点击fork、点击绿色的use this template（Create a new repository）、自己下载上传、甚至可以不通过github，每个文件直接上传到doprax上。。。。都可以
+#### 点击fork、点击绿色的use this template（Create a new repository）、自己下载上传、甚至可以不通过github，下载文件直接上传到doprax上
 
 #### 必填uuid变量名：uuid
 
