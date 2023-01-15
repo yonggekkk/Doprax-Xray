@@ -12,7 +12,7 @@
 
 #### 可选静态伪装站变量名：www   变量取值1-8，共8个伪装站可选择
 
-### [自定义域名CDN自选IP等相关文字视频教程请点击](https://ygkkk.blogspot.com/2023/01/doprax-xray-v2ray-cdn.html)
+### [Doprax自定义域名CDN自选IP等相关文字视频教程请点击](https://ygkkk.blogspot.com/2023/01/doprax-xray-v2ray-cdn.html)
 
 ---------------------------------------------------------------------------------------
 
