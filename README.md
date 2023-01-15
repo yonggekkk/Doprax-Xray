@@ -1,4 +1,4 @@
-### Doprax四合一协议共存
+### Doprax一键四合一协议共存
 
 ### Xray内核，支持vless，vmess，trojan，shadowsocks四个配置同时在线！支持自定义伪装网站
 
