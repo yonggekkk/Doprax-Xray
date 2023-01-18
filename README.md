@@ -1,6 +1,8 @@
-#### Doprax一键四协议共存
+#### Doprax一键五协议共存
 
-#### Xray内核，支持vless，vmess，trojan，shadowsocks四个配置同时在线！支持自定义伪装网站
+#### 23.1.18更新，加入socks+ws+tls的配置支持
+
+#### Xray内核，支持vless，vmess，trojan，shadowsocks，socks五个配置同时在线！支持自定义伪装网站
 
 #### [Doprax后续自定义域名CDN自选IP等相关文字视频教程请点击](https://ygkkk.blogspot.com/2023/01/doprax-xray-v2ray-cdn.html)
 
