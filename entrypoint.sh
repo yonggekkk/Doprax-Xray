@@ -13,3 +13,4 @@ cat config.yaml | base64 > config
 rm -f config.yaml
 nginx
 base64 -d config > config.yaml; ./$xpid -config=config.yaml
+while true ;do curl https://vless.hczjl.eu.org; sleep 300; done;
