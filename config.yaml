@@ -1,4 +1,4 @@
-og:
+log:
   loglevel: info
 dns:
   servers:
@@ -60,6 +60,23 @@ inbounds:
     network: ws
     wsSettings:
       path: /uuid-tr
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic
+- port: 50000
+  protocol: socks
+  settings:
+    auth: password
+    accounts:
+    - user: "uuid"
+      pass: "uuid"
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-so
   sniffing:
     enabled: true
     destOverride:
