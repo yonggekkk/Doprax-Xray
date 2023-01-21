@@ -2,6 +2,8 @@
 
 #### Xray内核，支持vless，vmess，trojan，shadowsocks，socks五个配置同时在线！支持自定义伪装网站
 
+#### [ytb视频教程](https://youtu.be/QsOGzuJ20oM)
+
 #### [五大协议客户端如何配置？自定义域名CDN自选IP等相关文字视频教程请点击](https://ygkkk.blogspot.com/2023/01/doprax-xray-v2ray-cdn.html)
 
 ------------------------
