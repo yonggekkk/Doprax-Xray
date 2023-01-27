@@ -20,7 +20,7 @@ sleep 5
 ARGO=$(cat argo.log | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
 xver=`./$xpid version | sed -n 1p | awk '{print $2}'`
 UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"
-v4=$(curl -s4m6 api64.ipify.org -k)
+v4=$(curl -s4m6 ip.sb -k)
 v4l=`curl -sm6 --user-agent "${UA_Browser}" http://ip-api.com/json/$v4?lang=zh-CN -k | cut -f2 -d"," | cut -f4 -d '"'`
 
 doprax_xray_vmess="vmess://$(echo -n "\
