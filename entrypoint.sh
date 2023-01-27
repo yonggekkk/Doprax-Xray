@@ -42,14 +42,10 @@ doprax_xray_vmess="vmess://$(echo -n "\
 doprax_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
 doprax_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
 
-vmcd=`qrencode -t ansiutf8 ${doprax_xray_vmess}`
-vlcd=`qrencode -t ansiutf8 ${doprax_xray_vless}`
-trcd=`qrencode -t ansiutf8 ${doprax_xray_trojan}`
-
-
 cat > log << EOF
 当前已安装的Xray正式版本：$xver
-当前检测到的IP：$v4    地区：$v4l
+当前检测到的IP：$v4
+地区：$v4l
 ==================================================
 cloudflared argo 隧道模式配置如下
 ==================================================
@@ -64,7 +60,6 @@ path路径：/$uuid-vm
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
 ${doprax_xray_vmess}
-$vmcd
 
 -----------------------------------------------------------------------
 vless+ws+tls配置明文如下，相关参数可复制到客户端
@@ -78,7 +73,6 @@ path路径：/$uuid-vl
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
 ${doprax_xray_vless}
-$vlcd
 
 ------------------------------------------------------
 trojan+ws+tls配置明文如下，相关参数可复制到客户端
@@ -92,7 +86,6 @@ path路径：/$uuid-tr
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
 ${doprax_xray_trojan}
-$trcd
 
 ------------------------------------------------------
 shadowsocks+ws+tls配置明文如下，相关参数可复制到客户端
