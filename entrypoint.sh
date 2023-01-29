@@ -25,7 +25,7 @@ UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 v4=$(curl -s4m6 ip.sb -k)
 v4l=`curl -sm6 --user-agent "${UA_Browser}" http://ip-api.com/json/$v4?lang=zh-CN -k | cut -f2 -d"," | cut -f4 -d '"'`
 
-doprax_xray_vmess="vmess://$(echo -n "\
+doprax/patr_xray_vmess="vmess://$(echo -n "\
 {\
 \"v\": \"2\",\
 \"ps\": \"doprax_xray_vmess\",\
@@ -41,8 +41,8 @@ doprax_xray_vmess="vmess://$(echo -n "\
 \"sni\": \"${ARGO}\"\
 }"\
     | base64 -w 0)" 
-doprax_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
-doprax_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
+doprax/patr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
+doprax/patr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
 
 cat > log << EOF
 当前已安装的Xray正式版本：$xver
