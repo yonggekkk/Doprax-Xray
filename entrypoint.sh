@@ -61,7 +61,7 @@ host/sni：$ARGO
 path路径：/$uuid-vm
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax_xray_vmess}
+${doprax/patr_xray_vmess}
 
 -----------------------------------------------------------------------
 vless+ws+tls配置明文如下，相关参数可复制到客户端
@@ -74,7 +74,7 @@ host/sni：$ARGO
 path路径：/$uuid-vl
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax_xray_vless}
+${doprax/patr_xray_vless}
 
 ------------------------------------------------------
 trojan+ws+tls配置明文如下，相关参数可复制到客户端
@@ -87,7 +87,7 @@ host/sni：$ARGO
 path路径：/$uuid-tr
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax_xray_trojan}
+${doprax/patr_xray_trojan}
 
 ------------------------------------------------------
 shadowsocks+ws+tls配置明文如下，相关参数可复制到客户端
