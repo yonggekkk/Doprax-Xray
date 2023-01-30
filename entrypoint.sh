@@ -25,7 +25,7 @@ UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 v4=$(curl -s4m6 ip.sb -k)
 v4l=`curl -sm6 --user-agent "${UA_Browser}" http://ip-api.com/json/$v4?lang=zh-CN -k | cut -f2 -d"," | cut -f4 -d '"'`
 
-doprax/patr_xray_vmess="vmess://$(echo -n "\
+doprax-patr_xray_vmess="vmess://$(echo -n "\
 {\
 \"v\": \"2\",\
 \"ps\": \"doprax_xray_vmess\",\
@@ -41,8 +41,8 @@ doprax/patr_xray_vmess="vmess://$(echo -n "\
 \"sni\": \"${ARGO}\"\
 }"\
     | base64 -w 0)" 
-doprax/patr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
-doprax/patr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
+doprax-patr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
+doprax-patr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
 
 cat > log << EOF
 当前已安装的Xray正式版本：$xver
@@ -61,7 +61,7 @@ host/sni：$ARGO
 path路径：/$uuid-vm
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax/patr_xray_vmess}
+${doprax-patr_xray_vmess}
 
 -----------------------------------------------------------------------
 vless+ws+tls配置明文如下，相关参数可复制到客户端
@@ -74,7 +74,7 @@ host/sni：$ARGO
 path路径：/$uuid-vl
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax/patr_xray_vless}
+${doprax-patr_xray_vless}
 
 ------------------------------------------------------
 trojan+ws+tls配置明文如下，相关参数可复制到客户端
@@ -87,7 +87,7 @@ host/sni：$ARGO
 path路径：/$uuid-tr
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${doprax/patr_xray_trojan}
+${doprax-patr_xray_trojan}
 
 ------------------------------------------------------
 shadowsocks+ws+tls配置明文如下，相关参数可复制到客户端
