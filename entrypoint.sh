@@ -28,7 +28,7 @@ v4l=`curl -sm6 --user-agent "${UA_Browser}" http://ip-api.com/json/$v4?lang=zh-C
 DopraxPatr_xray_vmess="vmess://$(echo -n "\
 {\
 \"v\": \"2\",\
-\"ps\": \"doprax_xray_vmess\",\
+\"ps\": \"doprax-patr_xray_vmess\",\
 \"add\": \"${ARGO}\",\
 \"port\": \"443\",\
 \"id\": \"$uuid\",\
@@ -41,8 +41,8 @@ DopraxPatr_xray_vmess="vmess://$(echo -n "\
 \"sni\": \"${ARGO}\"\
 }"\
     | base64 -w 0)" 
-DopraxPatr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax_xray_vless"
-DopraxPatr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax_xray_trojan"
+DopraxPatr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax-patr_xray_vless"
+DopraxPatr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax-patr_xray_trojan"
 
 cat > log << EOF
 当前已安装的Xray正式版本：$xver
