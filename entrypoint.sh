@@ -25,10 +25,10 @@ UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 v4=$(curl -s4m6 ip.sb -k)
 v4l=`curl -sm6 --user-agent "${UA_Browser}" http://ip-api.com/json/$v4?lang=zh-CN -k | cut -f2 -d"," | cut -f4 -d '"'`
 
-DopraxPatr_xray_vmess="vmess://$(echo -n "\
+Argo_xray_vmess="vmess://$(echo -n "\
 {\
 \"v\": \"2\",\
-\"ps\": \"doprax-patr_xray_vmess\",\
+\"ps\": \"Argo_xray_vmess\",\
 \"add\": \"${ARGO}\",\
 \"port\": \"443\",\
 \"id\": \"$uuid\",\
@@ -41,15 +41,15 @@ DopraxPatr_xray_vmess="vmess://$(echo -n "\
 \"sni\": \"${ARGO}\"\
 }"\
     | base64 -w 0)" 
-DopraxPatr_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#doprax-patr_xray_vless"
-DopraxPatr_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#doprax-patr_xray_trojan"
+Argo_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#Argo_xray_vless"
+Argo_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#Argo_xray_trojan"
 
 cat > log << EOF
 当前已安装的Xray正式版本：$xver
 当前检测到的IP：$v4
 地区：$v4l
 ==================================================
-cloudflared argo 隧道模式配置如下
+Cloudflared Argo 隧道模式配置如下
 ==================================================
 vmess+ws+tls配置明文如下，相关参数可复制到客户端
 服务器地址（可更改为自选IP）：$ARGO
@@ -61,7 +61,7 @@ host/sni：$ARGO
 path路径：/$uuid-vm
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${DopraxPatr_xray_vmess}
+${Argo_xray_vmess}
 
 -----------------------------------------------------------------------
 vless+ws+tls配置明文如下，相关参数可复制到客户端
@@ -74,7 +74,7 @@ host/sni：$ARGO
 path路径：/$uuid-vl
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${DopraxPatr_xray_vless}
+${Argo_xray_vless}
 
 ------------------------------------------------------
 trojan+ws+tls配置明文如下，相关参数可复制到客户端
@@ -87,7 +87,7 @@ host/sni：$ARGO
 path路径：/$uuid-tr
 
 分享链接如下（默认443端口、tls开启，服务器地址可更改为自选IP）
-${DopraxPatr_xray_trojan}
+${Argo_xray_trojan}
 
 ------------------------------------------------------
 shadowsocks+ws+tls配置明文如下，相关参数可复制到客户端
