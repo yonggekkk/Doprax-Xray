@@ -15,6 +15,7 @@ cat config.json | base64 > config
 rm -f config.json
 
 # argo与加密方案出自fscarmen
+rm -f cloudflared-linux-amd64*
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
 ./cloudflared-linux-amd64 tunnel --url http://localhost:8080 --no-autoupdate > argo.log 2>&1 &
