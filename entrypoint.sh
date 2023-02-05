@@ -123,7 +123,7 @@ path路径：/$uuid-so
 如当前环境支持shell，输入cat log查看当前配置信息
 ****************************************************************
 EOF
-
+ 
 cat log
 nginx
 base64 -d config > config.json; ./$xpid -config=config.json
