@@ -14,7 +14,7 @@
 | Xray版本 | ver |[版本号查看](https://github.com/XTLS/Xray-core/tags)，格式为x.x.x ，比如1.7.1|自动更新到Xray最新正式版|
 |更新中……|更新中……|更新中……|更新中……|
 ---------------
-目前Cloudflare Argo隧道域名自动生成，重启平台后会强制更新，须再次进入open shell，输入cat log查看
+#### 目前Cloudflare Argo隧道域名自动生成，重启平台后会强制更新，须再次进入open shell，输入cat log查看
 
 ---------------
 #### 五个协议的客户端参数小白文如下：
