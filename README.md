@@ -13,6 +13,40 @@
 | 伪装网页 | www |数字1-9任选一个数字，共9个伪装网页可选择|显示Nginx欢迎界面|
 | Xray版本 | ver |[版本号查看](https://github.com/XTLS/Xray-core/tags)，格式为x.x.x ，比如1.7.1|自动更新到Xray最新正式版|
 |更新中……|更新中……|更新中……|更新中……|
+---------------
+
+五个协议的客户端参数小白文如下：
+
+服务器地址：doprax分配的域名 ，CDN时填自定义、workers、argo域名或者自选IP
+
+端口：443
+
+（http端口：可选80、8080、8880、2052、2082、2086、2095，tls必须关闭）
+
+（https端口：可选443、2053、2083、2087、2096、8443，tls必须开启）
+
+用户名、密码、uuid：变量自定义uuid
+
+加密方式/算法：ss为chacha20-ietf-poly1305，其他协议默认不变即可
+
+插件(仅ss，socks才有)：v2ray-plugin，建议关闭多路复用
+
+传输协议/方式：ws或者websocket
+
+伪装域名host：doprax分配的域名或者留空，CDN时填自定义、workers、argo域名
+
+vless的path路径：/自定义uuid-vl
+
+vmess的path路径：/自定义uuid-vm
+
+trojan的path路径：/自定义uuid-tr
+
+shadowsocks的path路径：/自定义uuid-ss
+
+socks的path路径：/自定义uuid-so
+
+传输安全TLS：开启
+
 
 ---------------------------------------------------------------------------------------
 
