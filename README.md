@@ -14,8 +14,10 @@
 | Xray版本 | ver |[版本号查看](https://github.com/XTLS/Xray-core/tags)，格式为x.x.x ，比如1.7.1|自动更新到Xray最新正式版|
 |更新中……|更新中……|更新中……|更新中……|
 ---------------
+目前Cloudflare Argo隧道域名自动生成，重启平台后会强制更新，须再次进入open shell，输入cat log查看
 
-五个协议的客户端参数小白文如下：
+---------------
+#### 五个协议的客户端参数小白文如下：
 
 服务器地址：doprax分配的域名 ，CDN时填自定义、workers、argo域名或者自选IP
 
@@ -33,7 +35,7 @@
 
 传输协议/方式：ws或者websocket
 
-伪装域名host：doprax分配的域名或者留空，CDN时填自定义、workers、argo域名
+伪装域名host/sni：doprax分配的域名或者留空，CDN时填自定义、workers、argo域名
 
 vless的path路径：/自定义uuid-vl
 
