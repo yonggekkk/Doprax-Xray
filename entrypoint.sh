@@ -6,8 +6,8 @@ xpid=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 8)
 [ -n "${ver}" ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/download/v${ver}/Xray-linux-64.zip
 [ ! -s $nx.zip ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
 unzip $nx.zip xray && rm -f $nx.zip
-wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
-wget https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+wget -N https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+wget -N https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 chmod a+x xray && mv xray $xpid
 sed -i "s/uuid/$uuid/g" ./config.json
 sed -i "s/uuid/$uuid/g" /etc/nginx/nginx.conf
@@ -16,8 +16,7 @@ cat config.json | base64 > config
 rm -f config.json
 
 # argo与加密方案出自fscarmen
-rm -f cloudflared-linux-amd64*
-wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+wget -N https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
 ./cloudflared-linux-amd64 tunnel --url http://localhost:8080 --no-autoupdate > argo.log 2>&1 &
 sleep 5
