@@ -1,5 +1,4 @@
 #!/bin/bash
-apt-get upgrade -y
 apt update && apt install -y wget unzip
 nx=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 4)
 xpid=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 8)
