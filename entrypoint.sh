@@ -1,5 +1,5 @@
 #!/bin/bash
-apt update && apt install -y wget unzip
+apt-get update && apt-get install -y wget unzip
 nx=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 4)
 xpid=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 8)
 [ -n "${ver}" ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/download/v${ver}/Xray-linux-64.zip
