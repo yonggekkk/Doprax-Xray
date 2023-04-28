@@ -2,8 +2,8 @@
 apt-get update && apt-get install -y wget unzip
 nx=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 4)
 xpid=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 8)
-[ -n "${ver}" ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/download/v${ver}/Xray-linux-64.zip
-[ ! -s $nx.zip ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+#[ -n "${ver}" ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/download/v${ver}/Xray-linux-64.zip
+[ ! -s $nx.zip ] && wget -O $nx.zip https://github.com/XTLS/Xray-core/releases/download/v1.8.1/Xray-linux-64.zip
 unzip $nx.zip xray && rm -f $nx.zip
 wget -N https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
 wget -N https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
@@ -41,7 +41,8 @@ Argo_xray_vmess="vmess://$(echo -n "\
 \"sni\": \"${ARGO}\"\
 }"\
     | base64 -w 0)" 
-Argo_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#Argo_xray_vless"
+Argo_xray_vless="vless://${uuid}@$v4:40842?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$sni&fp=chrome&pbk=$pbk&sid=$sid&type=tcp&headerType=none#reality"
+# Argo_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$ARGO&type=ws&host=${ARGO}&path=/$uuid-vl#Argo_xray_vless"
 Argo_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#Argo_xray_trojan"
 
 cat > log << EOF
