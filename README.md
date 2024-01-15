@@ -1,3 +1,5 @@
+### 更新说明：Doprax容器已收费，本项目仅限付费用户使用
+
 #### Doprax一键五协议共存
 
 #### Xray内核，支持vless，vmess，trojan，shadowsocks，socks五个配置同时在线！支持自定义伪装网站
